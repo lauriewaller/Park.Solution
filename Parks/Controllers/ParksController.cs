@@ -22,23 +22,26 @@ namespace ParkApi.Controllers
 
     // GET: api/Parks
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get()
+    public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string parkType, string location)
     {
-      return await _db.Parks.ToListAsync();
+      var query = _db.Parks.AsQueryable();
 
-      // var query = _db.Parks.AsQueryable();
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
 
-      // if (origin != null)
-      // {
-      //   query = query.Where(entry => entry.Origin == origin);
-      // }
+      if (parkType != null)
+      {
+        query = query.Where(entry => entry.ParkType == parkType);
+      }
 
-      // if (sauceType != null)
-      // {
-      //   query = query.Where(entry => entry.SauceType == sauceType);
-      // }
+      if(location != null)
+      {
+        query = query.Where(entry => entry.Location == location);
+      }
 
-      // return query.ToList();
+      return query.ToList();
     }
     
     //GET: api/Parks/5

@@ -8,14 +8,10 @@
 
 * C#
 * ASP.NET Core MVC
-* ASP.NET Razor
 * Entity Framework Core
 * .NET 5.0
 * MySQL 
 * MySQL Workbench
-* CSS
-* HTML5
-* Identity
 
 ## Description
 This application implements a many-to-many relationship and allows the user to track treats and flavors at a restaurant. Users can:
@@ -36,7 +32,6 @@ This application implements a many-to-many relationship and allows the user to t
 * Entity Framework Core
   `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
   `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
-* Identity `dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 5.0.0` 
 
 ## Setup/Installation Requirements
 
