@@ -85,32 +85,31 @@ namespace ParkApi.Controllers
       return NoContent();
     }
 
-    // // POST: api/Parks
-    // // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-    // [HttpPost]
-    // public async Task<ActionResult<Park>> PostPark(Park Park)
-    // {
-    //   _db.Parks.Add(Park);
-    //   await _db.SaveChangesAsync();
+    // POST: api/Parks
+    [HttpPost]
+    public async Task<ActionResult<Park>> PostPark(Park Park)
+    {
+      _db.Parks.Add(Park);
+      await _db.SaveChangesAsync();
 
-    //   return CreatedAtAction(nameof(GetPark), new { id = Park.ParkId }, Park);
-    // }
+      return CreatedAtAction(nameof(GetPark), new { id = Park.ParkId }, Park);
+    }
 
-    // // DELETE: api/Parks/5
-    // [HttpDelete("{id}")]
-    // public async Task<IActionResult> DeletePark(int id)
-    // {
-    //   var Park = await _db.Parks.FindAsync(id);
-    //   if (Park == null)
-    //   {
-    //     return NotFound();
-    //   }
+    // DELETE: api/Parks/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeletePark(int id)
+    {
+      var Park = await _db.Parks.FindAsync(id);
+      if (Park == null)
+      {
+        return NotFound();
+      }
 
-    //   _db.Parks.Remove(Park);
-    //   await _db.SaveChangesAsync();
+      _db.Parks.Remove(Park);
+      await _db.SaveChangesAsync();
 
-    //   return NoContent();
-    // }
+      return NoContent();
+    }
 
     private bool ParkExists(int id)
     {
