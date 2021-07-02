@@ -55,36 +55,35 @@ namespace ParkApi.Controllers
       return Park;
     }
 
-    // // PUT: api/Parks/5
-    // // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-    // [HttpPut("{id}")]
-    // public async Task<IActionResult> PutPark(int id, Park Park)
-    // {
-    //   if (id != Park.ParkId)
-    //   {
-    //     return BadRequest();
-    //   }
+    // PUT: api/Parks/5
+    [HttpPut("{id}")]
+    public async Task<IActionResult> PutPark(int id, Park Park)
+    {
+      if (id != Park.ParkId)
+      {
+        return BadRequest();
+      }
 
-    //   _db.Entry(Park).State = EntityState.Modified;
+      _db.Entry(Park).State = EntityState.Modified;
 
-    //   try
-    //   {
-    //     await _db.SaveChangesAsync();
-    //   }
-    //   catch (DbUpdateConcurrencyException)
-    //   {
-    //     if (!ParkExists(id))
-    //     {
-    //       return NotFound();
-    //     }
-    //     else
-    //     {
-    //       throw;
-    //     }
-    //   }
+      try
+      {
+        await _db.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!ParkExists(id))
+        {
+          return NotFound();
+        }
+        else
+        {
+          throw;
+        }
+      }
 
-    //   return NoContent();
-    // }
+      return NoContent();
+    }
 
     // // POST: api/Parks
     // // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -113,10 +112,10 @@ namespace ParkApi.Controllers
     //   return NoContent();
     // }
 
-    // private bool ParkExists(int id)
-    // {
-    //   return _db.Parks.Any(e => e.ParkId == id);
-    // }
+    private bool ParkExists(int id)
+    {
+      return _db.Parks.Any(e => e.ParkId == id);
+    }
   }
 }
 
