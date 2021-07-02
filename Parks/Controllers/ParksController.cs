@@ -41,19 +41,19 @@ namespace ParkApi.Controllers
       // return query.ToList();
     }
     
-    // GET: api/Parks/5
-    // [HttpGet("{id}")]
-    // public async Task<ActionResult<Park>> GetPark(int id)
-    // {
-    //   var Park = await _db.Parks.FindAsync(id);
+    //GET: api/Parks/5
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Park>> GetPark(int id)
+    {
+      var Park = await _db.Parks.FindAsync(id);
 
-    //   if (Park == null)
-    //   {
-    //     return NotFound();
-    //   }
+      if (Park == null)
+      {
+        return NotFound();
+      }
 
-    //   return Park;
-    // }
+      return Park;
+    }
 
     // // PUT: api/Parks/5
     // // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
