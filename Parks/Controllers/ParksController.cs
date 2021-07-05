@@ -41,7 +41,7 @@ namespace ParkApi.Controllers
         query = query.Where(entry => entry.Location == location);
       }
 
-      return query.ToList();
+      return await query.ToListAsync();
     }
     
     //GET: api/Parks/5
@@ -120,4 +120,3 @@ namespace ParkApi.Controllers
     }
   }
 }
-
