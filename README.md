@@ -17,7 +17,7 @@
 This API follows RESTful principles and allows provides create, read, update, and delete functionality. Developers can filter GET requests using Name, ParkType, and Location parameters.
 
 ## API Documentation
-To view further API documentation via Swagger, [see here](https://app.swaggerhub.com/apis/lauriewaller/PastaAllMethods/0.1).
+To view further API documentation via Swagger, [see here](https://app.swaggerhub.com/apis-docs/lauriewaller/parks2/0.1#/).
 
 ## Prerequisites
 
