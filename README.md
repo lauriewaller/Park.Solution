@@ -12,6 +12,7 @@
 * .NET 5.0
 * MySQL 
 * MySQL Workbench
+* Swagger
 
 ## Description
 This API follows RESTful principles and allows provides create, read, update, and delete functionality. Developers can filter GET requests using Name, ParkType, and Location parameters.
