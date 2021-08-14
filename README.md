@@ -1,6 +1,6 @@
 # Parks Application
 
-#### A RESTful API using full CRUD functionality. Provides name and location data for national and state parks in the US. 
+#### A RESTful API using full CRUD functionality. Provides name and location data for national and state parks in the United States. 
 
 #### By **Laurie Waller**
 
